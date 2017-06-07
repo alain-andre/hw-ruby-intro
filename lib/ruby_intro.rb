@@ -3,15 +3,20 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  arr.inject(0, :+)
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  arr.sort.reverse.slice!(0..1).inject(0, :+)
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+	return false if arr.length == 1 || arr.length == 0
+  if arr.slice(1..2).inject(0, :+) == n
+  	true
+  else
+  	false 
+  end
 end
 
 # Part 2
